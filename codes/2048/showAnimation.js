@@ -11,3 +11,11 @@ function showNumAnimation(i,j,Number){
             left:getPosLeft(i,j)
         },50)
 }
+function  showMoveAnimation(fromX,fromY,toX,toY){
+    $("number-cell-"+fromX+"-"+fromY).animate(
+        {
+            top: getPosTop(toX,toY),
+            left:getPosLeft(toX,toY)
+        },200
+    )
+}

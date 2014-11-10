@@ -76,3 +76,83 @@ function generateRandom(){
     showNumAnimation(randomX,randomY,randomNum);
 
 }
+$(document).keydown(function(event){
+    switch (event.keyCode){
+        case 37://left
+            if(moveLeft()){
+                generateRandom();
+                isGameOver();
+            }
+            break;
+        case 38://up
+            if(moveLUp()){
+                generateRandom();
+                isGameOver();
+            }
+            break;
+        case 39://right
+            if(moveRight()){
+                generateRandom();
+                isGameOver();
+            }
+            break;
+        case 40://down
+            if(moveDown()){
+                generateRandom();
+                isGameOver();
+            }
+            break;
+        default :
+            break
+
+    }
+})
+
+function moveLeft(){
+    if(!canMoveLeft(board))
+        return false;
+    for(var i = 0;i<4;i++){
+        for(var j =1;j<4;j++){
+            if(board[i][j]!=0){
+                for(var k = 0 ;k<j;k++){
+                    if(board[i][k]==0 && noBlockHorizontal(i,k,j,board)){
+                        //move
+                        showMoveAnimation(i,j,i,k);
+                        board[i][k] = board[i][j];
+                        board[i][j] = 0;
+                        continue;
+                    }else if(board[i][k] == board[i][j] && noBlockHorizontal(i,k,j,board)){
+                        //move
+                        //add
+                        showMoveAnimation(i,j,i,k);
+                        board[i][k] += board[i][j] ;
+                        board[i][j] = 0;
+                        continue;
+                    }
+                }
+            }
+
+        }
+    }
+    setTimeout("updateBoardView()",200);
+    return true;
+
+
+
+}
+
+function canMoveLeft(board){
+    for (var i = 0; i<4 ; i++){
+        for(var j =1;j<4 ;j++ ){
+            if(board[i][j] != 0 ){
+                if(board[i][j-1]==0 || board[i][j] == board[i][j-1])
+                    return true;
+            }
+
+        }
+    }
+    return false
+}
+function isGameOver(){
+
+}
