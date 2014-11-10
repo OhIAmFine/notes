@@ -11,6 +11,8 @@ function newGame(){
     //初始化棋盘格
     init();
     //在随机两个格子生成数字
+    generateRandom();
+    generateRandom();
 }
 
 function init(){
@@ -56,4 +58,21 @@ function updateBoardView(){
                 theNumberCell.text( board[i][j] );
             }
         }
+}
+function generateRandom(){
+    //随机生成一个位置
+    var randomX = parseInt(Math.random()*4);
+    var randomY = parseInt(Math.random()*4);
+
+    while(true){
+        if(board[randomX][randomY] == 0){
+            break;
+        }
+        randomX = parseInt(Math.random()*4);
+        randomY = parseInt(Math.random()*4);
+    }
+    var randomNum = Math.random()<0.5?2:4;
+    board[randomX][randomY] = randomNum;
+    showNumAnimation(randomX,randomY,randomNum);
+
 }

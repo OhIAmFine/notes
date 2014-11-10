@@ -26,6 +26,9 @@ a{
     position: absolute;
     text-align: center;
     border-radius: 6px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 60px;
 }
 #newGameBtn{
     padding: 10px 16px;
