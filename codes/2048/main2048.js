@@ -85,7 +85,7 @@ $(document).keydown(function(event){
             }
             break;
         case 38://up
-            if(moveLUp()){
+            if(moveUp()){
                 generateRandom();
                 isGameOver();
             }
@@ -153,6 +153,147 @@ function canMoveLeft(board){
     }
     return false
 }
+
+
+function moveRight(){
+    if(!canMoveRight(board))
+        return false;
+    for(var i = 0;i<4;i++){
+        for(var j =0;j<3;j++){
+            if(board[i][j]!=0){
+                for(var k = 3 ;k>j;k--){
+                    if(board[i][k]==0 && noBlockHorizontal(i,j,k,board)){
+                        //move
+                        showMoveAnimation(i,j,i,k);
+                        board[i][k] = board[i][j];
+                        board[i][j] = 0;
+                        continue;
+                    }else if(board[i][k] == board[i][j] && noBlockHorizontal(i,j,k,board)){
+                        //move
+                        //add
+                        showMoveAnimation(i,j,i,k);
+                        board[i][k] += board[i][j] ;
+                        board[i][j] = 0;
+                        continue;
+                    }
+                }
+            }
+
+        }
+    }
+    setTimeout("updateBoardView()",200);
+    return true;
+}
+
+function canMoveRight(board){
+    for (var i = 0; i<4 ; i++){
+        for(var j =0;j<3 ;j++ ){
+            if(board[i][j] != 0 ){
+                if(board[i][j+1]==0 || board[i][j] == board[i][j+1])
+                    return true;
+            }
+
+        }
+    }
+    return false;
+}
+
+
+function moveUp(){
+    if(!canMoveUp(board))
+        return false;
+    for(var i = 1;i<4;i++){
+        for(var j =0;j<4;j++){
+            if(board[i][j]!=0){
+                for(var k = 0 ;k<i;k++){
+                    if(board[k][j]==0 && noBlockVertical(k,i,j,board)){
+                        //move
+                        showMoveAnimation(i,j,k,j);
+                        board[k][j] = board[i][j];
+                        board[i][j] = 0;
+                        continue;
+                    }else if(board[k][j] == board[i][j] &&  noBlockVertical(k,i,j,board)){
+                        //move
+                        //add
+                        showMoveAnimation(i,j,k,j);
+                        board[k][j] += board[i][j] ;
+                        board[i][j] = 0;
+                        continue;
+                    }
+                }
+            }
+
+        }
+    }
+    setTimeout("updateBoardView()",200);
+    return true;
+
+
+
+}
+
+function canMoveUp(board){
+    for (var i = 1; i<4 ;i++){
+        for(var j =0;j<4 ;j++ ){
+            if(board[i][j] != 0 ){
+                if(board[i-1][j]==0 || board[i][j] == board[i-1][j])
+                    return true;
+            }
+
+        }
+    }
+    return false;
+}
+
+
+
+function moveDown(){
+    if(!canMoveDown(board))
+        return false;
+    for(var i = 0;i<3;i++){
+        for(var j =0;j<4;j++){
+            if(board[i][j]!=0){
+                for(var k = i+1 ;k<4;k++){
+                    if(board[k][j]==0 && noBlockVertical(i,k,j,board)){
+                        //move
+                        showMoveAnimation(i,j,k,j);
+                        board[k][j] = board[i][j];
+                        board[i][j] = 0;
+                        continue;
+                    }else if(board[k][j] == board[i][j] &&  noBlockVertical(i,k,j,board)){
+                        //move
+                        //add
+                        showMoveAnimation(i,j,k,j);
+                        board[k][j] += board[i][j] ;
+                        board[i][j] = 0;
+                        continue;
+                    }
+                }
+            }
+
+        }
+    }
+    setTimeout("updateBoardView()",200);
+    return true;
+
+
+
+}
+
+function canMoveDown(board){
+    for (var i = 0; i<3 ;i++){
+        for(var j =0;j<4 ;j++ ){
+            if(board[i][j] != 0 ){
+                if(board[i+1][j]==0 || board[i][j] == board[i+1][j])
+                    return true;
+            }
+
+        }
+    }
+    return false;
+}
+
+
 function isGameOver(){
 
 }
