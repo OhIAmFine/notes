@@ -65,7 +65,7 @@ function updateBoardView(){
                 theNumberCell.text( board[i][j] );
             }
         }
-
+    $("#score").text(score);
 }
 function generateRandom(){
     //随机生成一个位置
@@ -135,6 +135,7 @@ function moveLeft(){
                         //add
                         showMoveAnimation(i,j,i,k);
                         board[i][k] += board[i][j] ;
+                        score+=board[i][k];
                         board[i][j] = 0;
                         hasConflicted[i][k] = true;
                         continue;
@@ -185,6 +186,7 @@ function moveRight(){
                         showMoveAnimation(i,j,i,k);
                         board[i][k] += board[i][j] ;
                         board[i][j] = 0;
+                        score+=board[i][k];
                         hasConflicted[i][k] = true;
                         continue;
                     }
@@ -230,6 +232,7 @@ function moveUp(){
                         showMoveAnimation(i,j,k,j);
                         board[k][j] += board[i][j] ;
                         board[i][j] = 0;
+                        score+=board[k][j];
                         hasConflicted[k][j] = true;
                         continue;
                     }
@@ -279,6 +282,7 @@ function moveDown(){
                         showMoveAnimation(i,j,k,j);
                         board[k][j] += board[i][j] ;
                         board[i][j] = 0;
+                        score+=board[k][j];
                         hasConflicted[k][j] = true;
                         continue;
                     }
@@ -313,7 +317,7 @@ function isGameOver(){
         alert("game over")
     }
 
-
 }
+
 
 
