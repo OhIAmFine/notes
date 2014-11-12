@@ -47,3 +47,13 @@ function noBlockVertical(row1,row2,col,board){
     }
     return true;
 }
+function nospace(board){
+    for(var i = 0 ;i<4;i++){
+        for(var j =0 ; j<4 ;j++){
+           if( board[i][j] == 0)
+            return false;
+        }
+    }
+    return true;
+
+}
