@@ -3,11 +3,15 @@
 var board = new Array();
 var hasConflicted = new Array();
 var score = 0;
-
+var deviceWidth = window.screen.availWidth,
+    deviceHeight = window.screen.availHeight;
 $(document).ready(function(){
+    prepareForMobile();
     newGame();
 });
+function prepareForMobile(){
 
+}
 function newGame(){
     //初始化棋盘格
     init();
