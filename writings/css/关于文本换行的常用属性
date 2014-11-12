@@ -1,0 +1,20 @@
+关于文本换行的常用属性
+======================
+
+一、white-space
+---------------
+
+1. white-space 属性设置如何处理元素内的空白。具有继承性，默认值为normal,常用的值为nowrap,inherit等
+2. 设置为nowrap时文本不会换行，将会在同一行上继续
+
+二、word-wrap
+---------------
+
+1.word-wrap具有继承性，默认值为normal,值为normal,break-word
+2.设置为normal时，只在允许的断字点换行（浏览器默认处理）;设置为break-word时,在长单词或url内部换行
+
+三、结合着overflow:hidden,white-space:nowrap使用的text-overflow
+------------------------------------------------
+
+1.text-overflow 属性规定当文本溢出包含元素时发生的事情,没有继承性，默认值为clip,常用的值有ellipsis
+2.设置为ellipsis时显示省略符号来代表被修剪的文本
