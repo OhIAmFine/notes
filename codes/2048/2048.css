@@ -5,15 +5,17 @@ body{
 a{
     text-decoration: none;
 }
-header{
+*{
     box-sizing: border-box;
+}
+header{
     width: 200px;
     margin:  0 auto;
 }
 .cell-wrap{
     margin: 10px auto;
-    width: 460px;
-    height: 460px;
+    width: 500px;
+    height: 500px;
     padding: 20px;
     position: relative;
     text-align: center;
@@ -32,7 +34,6 @@ header{
     text-align: center;
     border-radius: 6px;
     line-height: 100px;
-    text-align: center;
     font-size: 40px;
 }
 #newGameBtn{
@@ -49,12 +50,5 @@ header{
 .score{
     color: #428bca;
 }
-.container{
-   box-sizing: border-box;
-    width: 750px;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
+
 

@@ -5,6 +5,7 @@ var hasConflicted = new Array();
 var score = 0;
 var deviceWidth = window.screen.availWidth,
     deviceHeight = window.screen.availHeight;
+    console.log(deviceWidth)
 $(document).ready(function(){
     prepareForMobile();
     newGame();
