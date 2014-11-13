@@ -39,7 +39,7 @@ header{
     padding: 6px 10px;
     font-size: 18px;
     display: block;
-    width: 100px;
+    width: 120px;
     line-height: 20px;
     text-align: center;
     border-radius: 6px;
@@ -47,7 +47,10 @@ header{
     background-color: #428bca;
 }
 .score{
+    margin-left: 30px;
     color: #428bca;
 }
-
+header p{
+    display: inline-block;
+}
 
