@@ -8,6 +8,7 @@ var deviceWidth = window.screen.availWidth,
     cellWrap = deviceWidth * 0.92,
 
     cellSlideLength = 0.18 * deviceWidth;
+var startX=0,startY=0,endX=0,endY=0;
 
 $(document).ready(function(){
     prepareForMobile();
@@ -130,7 +131,41 @@ $(document).keydown(function(event){
 
     }
 })
-
+$(document).addEventListener("touchstart",function(event){
+    startX = event.touches[0].pageX;
+    startY = event.touches[0].pageY;
+})
+$(document).addEventListener("touchend",function(event){
+    endX = event.changedTouches[0].pageX;
+    endY = event.changedTouches[0].pageY;
+    var deltaX = endX - startX;
+    var deltaY = endY - startY;
+    if(Math.abs(deltaX) > Math.abs(deltaY)){
+        if(deltaX<0){
+            if(moveLeft()){
+                setTimeout("generateRandom()",210)
+                setTimeout("isGameOver()",300)
+            }
+        }else{
+            if(moveRight()){
+                setTimeout("generateRandom()",210)
+                setTimeout("isGameOver()",300)
+            }
+        }
+    }else{
+        if(deltaY<0){
+            if(moveUp()){
+                setTimeout("generateRandom()",210)
+                setTimeout("isGameOver()",300)
+            }
+        }else{
+            if(moveDown()){
+                setTimeout("generateRandom()",210)
+                setTimeout("isGameOver()",300)
+            }
+        }
+    }
+})
 function moveLeft(){
     if(!canMoveLeft(board))
         return false;
