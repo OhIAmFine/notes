@@ -3,10 +3,13 @@ function showNumAnimation(i,j,Number){
         .text(Number)
         .css({
             background:getNumberBackgroundColor(Number),
-            color: getNumberColor(Number)
+            color: getNumberColor(Number),
+            borderRadius:deviceWidth*0.02
+
         }).animate({
-            width:"100px",
-            height:"100px",
+            width:cellSlideLength,
+            height:cellSlideLength,
+
             top:getPosTop(i,j),
             left:getPosLeft(i,j)
         },50)

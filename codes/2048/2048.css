@@ -33,7 +33,6 @@ header{
     position: absolute;
     text-align: center;
     border-radius: 6px;
-    line-height: 100px;
     font-size: 40px;
 }
 #newGameBtn{

@@ -4,13 +4,21 @@ var board = new Array();
 var hasConflicted = new Array();
 var score = 0;
 var deviceWidth = window.screen.availWidth,
-    deviceHeight = window.screen.availHeight;
-    console.log(deviceWidth)
+    deviceHeight = window.screen.availHeight,
+    cellWrap = deviceWidth * 0.92,
+
+    cellSlideLength = 0.18 * deviceWidth;
+
 $(document).ready(function(){
     prepareForMobile();
     newGame();
 });
 function prepareForMobile(){
+
+   $(".cell-wrap").css({"width":cellWrap,"height":cellWrap,"border-radius":deviceWidth*0.02});
+   $(".grid-cell").css({"width":cellSlideLength,"height":cellSlideLength,"border-radius":deviceWidth*0.02})
+
+
 
 }
 function newGame(){
@@ -26,8 +34,9 @@ function init(){
         for( var j = 0 ; j < 4 ; j ++ ){
 
             var gridCell = $('#grid-cell-'+i+"-"+j);
-            gridCell.css('top', getPosTop( i , j ) );
-            gridCell.css('left', getPosLeft( i , j ) );
+
+            gridCell.css('top', getPosTop( i , j )  );
+            gridCell.css('left', getPosLeft( i , j )  );
         }
 
     for( var i = 0 ; i < 4 ; i ++ ){
@@ -51,7 +60,7 @@ function updateBoardView(){
 
         for( var j = 0 ; j < 4 ; j ++ ){
             hasConflicted[i][j] = false;
-            $(".cell-wrap").append( '<div class="number-cell" id="number-cell-'+i+'-'+j+'"></div>' );
+            $(".cell-wrap").append( '<div class="number-cell"  id="number-cell-'+i+'-'+j+'"></div>' );
             var theNumberCell = $('#number-cell-'+i+'-'+j);
 
             if( board[i][j] == 0 ){
@@ -61,8 +70,9 @@ function updateBoardView(){
                 theNumberCell.css('left',getPosLeft(i,j) + 50 );
             }
             else{
-                theNumberCell.css('width','100px');
-                theNumberCell.css('height','100px');
+                theNumberCell.css('width',cellSlideLength);
+                theNumberCell.css('height',cellSlideLength);
+
                 theNumberCell.css('top',getPosTop(i,j));
                 theNumberCell.css('left',getPosLeft(i,j));
                 theNumberCell.css('background-color',getNumberBackgroundColor( board[i][j] ) );
