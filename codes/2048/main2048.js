@@ -131,15 +131,18 @@ $(document).keydown(function(event){
 
     }
 })
-$(document).addEventListener("touchstart",function(event){
+document.addEventListener("touchstart",function(event){
     startX = event.touches[0].pageX;
     startY = event.touches[0].pageY;
 })
-$(document).addEventListener("touchend",function(event){
+document.addEventListener("touchend",function(event){
     endX = event.changedTouches[0].pageX;
     endY = event.changedTouches[0].pageY;
     var deltaX = endX - startX;
     var deltaY = endY - startY;
+    if( Math.abs(deltaX) < 0.1 * deviceWidth  && Math.abs(deltaY) <0.1 * deviceWidth )
+    return ;
+
     if(Math.abs(deltaX) > Math.abs(deltaY)){
         if(deltaX<0){
             if(moveLeft()){

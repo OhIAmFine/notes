@@ -13,11 +13,11 @@
 <body>
 <header>
     <p>2048</p><p class="score">score:<span id="score">0</span></p>
-    <a href="javascript:newGame();" id="newGameBtn">new game</a>
+    <button  id="newGameBtn" onclick="newGame()">new game</button>
 
 </header>
 
-<div class="cell-wrap">
+<div class="cell-wrap" id="cell-wrap">
     <div id="grid-cell-0-0" class="grid-cell"></div>
     <div id="grid-cell-0-1" class="grid-cell"></div>
     <div id="grid-cell-0-2" class="grid-cell"></div>
