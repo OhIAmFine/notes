@@ -15,7 +15,8 @@ CSS中的对齐格式常用的属性
    
 
 
-附一个 [css属性参考链接](http://www.w3school.com.cn/cssref/index.asp)，没事可以多看看,温故而知新，有一些属性的应用可以直接解决问题,提高工作效率  
+ 附一个 [css属性参考链接](http://www.w3school.com.cn/cssref/index.asp)，没事可以多看看,温故而知新.  
+ 有一些属性的应用可以直接解决问题,提高工作效率  
 
  
    
