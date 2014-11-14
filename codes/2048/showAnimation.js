@@ -4,12 +4,12 @@ function showNumAnimation(i,j,Number){
         .css({
             background:getNumberBackgroundColor(Number),
             color: getNumberColor(Number),
-            borderRadius:deviceWidth*0.02
+            borderRadius:borderRadius
 
         }).animate({
-            width:cellSlideLength,
-            height:cellSlideLength,
-
+            width:cellSideLength,
+            height:cellSideLength,
+            lineHeight:cellSideLength+"px",
             top:getPosTop(i,j),
             left:getPosLeft(i,j)
         },50)
@@ -19,6 +19,7 @@ function  showMoveAnimation(fromX,fromY,toX,toY){
         {
             top: getPosTop(toX,toY),
             left:getPosLeft(toX,toY)
+
         },200
     )
 }

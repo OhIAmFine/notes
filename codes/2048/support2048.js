@@ -1,10 +1,10 @@
 
 function getPosTop( i , j ){
-    return (0.04 + i*0.22)*deviceWidth;
+    return cellSpace + i *(cellSpace+cellSideLength);
 }
 
 function getPosLeft( i , j ){
-    return (0.04 + j*0.22)*deviceWidth;
+  return cellSpace + j*(cellSpace+cellSideLength);
 }
 
 function getNumberBackgroundColor( number ){
