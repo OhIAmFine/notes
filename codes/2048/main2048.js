@@ -2,7 +2,8 @@
 
 var board = new Array();
 var hasConflicted = new Array();
-var score = 0;
+var score = 0,
+    scoreAdd = 0;
 var deviceWidth = window.screen.availWidth,
   cellWrap = deviceWidth * 0.92,
   borderRadius = deviceWidth * 0.02,
@@ -86,6 +87,8 @@ function updateBoardView(){
       }
     }
   $("#score").text(score);
+
+  $(".scoreAdd").text("+"+scoreAdd);
 }
 function generateRandom(){
   //随机生成一个位置
@@ -193,6 +196,7 @@ function moveLeft(){
             showMoveAnimation(i,j,i,k);
             board[i][k] += board[i][j] ;
             score+=board[i][k];
+            scoreAdd = board[i][k];
             board[i][j] = 0;
             hasConflicted[i][k] = true;
             continue;
@@ -240,6 +244,7 @@ function moveRight(){
             board[i][k] += board[i][j] ;
             board[i][j] = 0;
             score+=board[i][k];
+            scoreAdd = board[i][k];
             hasConflicted[i][k] = true;
             continue;
           }
@@ -284,6 +289,7 @@ function moveUp(){
             board[k][j] += board[i][j] ;
             board[i][j] = 0;
             score+=board[k][j];
+            scoreAdd = board[k][j];
             hasConflicted[k][j] = true;
             continue;
           }
@@ -330,6 +336,7 @@ function moveDown(){
             board[k][j] += board[i][j] ;
             board[i][j] = 0;
             score+=board[k][j];
+            scoreAdd = board[k][j];
             hasConflicted[k][j] = true;
             continue;
           }
