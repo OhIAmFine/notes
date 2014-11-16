@@ -87,8 +87,11 @@ function updateBoardView(){
       }
     }
   $("#score").text(score);
+  if(scoreAdd != 0){
+      $(".scoreAdd").text("+"+scoreAdd).fadeIn().fadeOut();
+      scoreAdd = 0;
+  }
 
-  $(".scoreAdd").text("+"+scoreAdd);
 }
 function generateRandom(){
   //随机生成一个位置
