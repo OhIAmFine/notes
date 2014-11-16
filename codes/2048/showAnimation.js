@@ -15,6 +15,7 @@ function showNumAnimation(i,j,Number){
         },50)
 }
 function  showMoveAnimation(fromX,fromY,toX,toY){
+    $(".scoreAdd").stop();
     $("number-cell-"+fromX+"-"+fromY).animate(
         {
             top: getPosTop(toX,toY),
