@@ -53,15 +53,26 @@ header{
     position: relative;
 
 }
+@-webkit-keyframes move-up {
+    0% {
+        top: 25px;
+        opacity: 1; }
+
+    100% {
+        top: -50px;
+        opacity: 0; } }
 .scoreAdd{
-    color: rgb(245, 149, 99);
     position: absolute;
-    top: 0;
-    right: -50px;
-    left: auto;
-    background: rgba(0,0,0,.3);
-    padding: 0 14px;
-    display: none;
+    right: 30px;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: bold;
+    color: rgba(119, 110, 101, 0.9);
+    z-index: 100;
+    -webkit-animation: move-up 600ms ease-in;
+    -webkit-animation-fill-mode: both;
+
+
 }
 header p{
     display: inline-block;

@@ -88,7 +88,8 @@ function updateBoardView(){
     }
   $("#score").text(score);
   if(scoreAdd != 0){
-      $(".scoreAdd").text("+"+scoreAdd).fadeIn("slow").fadeOut("slow");
+      $(".scoreAdd").remove();
+      $("<p class='scoreAdd'></p>").text(scoreAdd).appendTo(".score")
       scoreAdd = 0;
   }
 
