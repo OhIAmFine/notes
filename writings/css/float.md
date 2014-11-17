@@ -15,6 +15,13 @@ css属性float总结
 1. 与position:relative同用时，元素先浮动到相应的方位，然后再根据（top / left / bottom / right）所设置的值进行偏移
 2. 与position:absolute或者fixed同用时，float失效
 
+三、清楚浮动的常用方法
+-----------------------
+
+1. 父元素内部结尾添加一个HTML标签,设置clear:both.来手工清理浮动
+2. 父元素设置 overflow:hidden 或 overflow:auto,配合可以设置zoom:1样式触发IE6 haslayout特性，来兼容所有浏览器清理浮动
+
+####参考链接: http://w3help.org/zh-cn/casestudies/001 
 
 
 
