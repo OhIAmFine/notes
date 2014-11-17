@@ -20,8 +20,6 @@ CSS中的对齐格式常用的属性
 2. 该属性影响了left,right的计算值(left,right有效时):如果 'left' 和 'right' 都设定了值,如果元素的 'direction' 属性是 "ltr"， 那么取 'left'的值, 如果 'direction' 属性是 ‘rtl’,那么 取'right'的值. 
 
 
- 附一个 [css属性参考链接](http://www.w3school.com.cn/cssref/index.asp)，没事可以多看看,温故而知新.  
- 有一些属性的应用可以直接解决问题,提高工作效率  
-
+ #####附一个 [css属性参考链接](http://www.w3school.com.cn/cssref/index.asp)，没事可以多看看,温故而知新.
  
    
