@@ -26,6 +26,7 @@ function prepareForMobile(){
   }
   $(".cell-wrap").css({"width":cellWrap,"height":cellWrap,"border-radius":borderRadius});
   $(".grid-cell").css({"width":cellSideLength,"height":cellSideLength,"border-radius":borderRadius})
+  $("header").css({"width":cellWrap});
 
 
 
@@ -89,7 +90,7 @@ function updateBoardView(){
   $("#score").text(score);
   if(scoreAdd != 0){
       $(".scoreAdd").remove();
-      $("<p class='scoreAdd'></p>").text(scoreAdd).appendTo(".score")
+      $("<p class='scoreAdd'></p>").text("+"+scoreAdd).appendTo(".score")
       scoreAdd = 0;
   }
 
