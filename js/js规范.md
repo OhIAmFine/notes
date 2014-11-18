@@ -12,6 +12,14 @@ javascript代码规范
     + boolean
     + null
     + undefined
+    
+    ```javascript
+    var foo = 1,
+        bar = foo;
+    bar = 9;
+    console.log(foo,bar); // => 1, 9
+    ```
+        
    
 
 
