@@ -35,7 +35,7 @@ javascript代码规范
 对象
 ---------
 
-  -**使用字面值创建对象**
+  - **使用字面值创建对象**
   
   ```javascript
   //bad
@@ -48,7 +48,7 @@ javascript代码规范
 数组
 -----
 
-  -**使用字面值创建数组**
+  - **使用字面值创建数组**
   
   ```javascript
   //bad
@@ -57,7 +57,7 @@ javascript代码规范
   //good
   var items = [];
   ```
-  -**不知道数组的长度时用push**
+  - **不知道数组的长度时用push**
   
   ```javascript
   var items = [];
@@ -68,7 +68,7 @@ javascript代码规范
   items.push('asdf');
   ```
     
-  -**复制数组的时候使用slice**
+  - **复制数组的时候使用slice**
   
   ```javascript
   var len = items.length,
@@ -84,7 +84,7 @@ javascript代码规范
   itemsCopy = items.slice();
   ```
   
-  -**把类数组转换成数组时使用Array的slice**
+  - **把类数组转换成数组时使用Array的slice**
   
   ```javascript
   function fire(){
