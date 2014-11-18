@@ -8,7 +8,7 @@ javascript代码规范
   - **原始值:直接传值**
   
     + string
-    + nunmber
+    + number
     + boolean
     + null
     + undefined
