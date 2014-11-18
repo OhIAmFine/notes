@@ -1,5 +1,5 @@
 body{
-    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    font-family: "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     color: #776e65;
 
@@ -28,6 +28,7 @@ header{
     text-align: center;
     background: #bbada0;
     border-radius: 10px;
+    font-size: 20px;
 }
 .grid-cell {
     position: absolute;
@@ -40,10 +41,10 @@ header{
     position: absolute;
     text-align: center;
     border-radius: 6px;
-    font-size: 40px;
+
     line-height: 100px;
 }
-#newGameBtn{
+.gameBtn {
     padding: 6px 10px;
     font-size: 18px;
     width: 110px;
@@ -68,16 +69,29 @@ header{
     background-color:#edc53f;
     float: right;
     margin: 0;
+    cursor: default;
 
 }
 @-webkit-keyframes move-up {
     0% {
-        top: 25px;
+        top: 0px;
         opacity: 1; }
 
     100% {
         top: -50px;
         opacity: 0; } }
+@-webkit-keyframes scale{
+    0%{
+        -moz-transform:scale(2,2);
+        -webkit-transform:scale(2,2);
+        -o-transform:scale(2,2);
+    }
+    100%{
+        -moz-transform:scale(1,1);
+        -webkit-transform:scale(1,1);
+        -o-transform:scale(1,1);
+    }
+}
 .scoreAdd{
     position: absolute;
     right: 30px;
@@ -90,4 +104,20 @@ header{
     -webkit-animation-fill-mode: both;
 }
 
-
+.gameover{
+    display: none;
+    z-index: 10000;
+    position: absolute;
+    width: 540px;
+    height: 540px;
+    left: 0;
+    top: 0;
+    background: rgba(255,255,255,0.6);
+}
+.gameover p{
+    font-size: 50px;
+}
+.win{
+    -webkit-animation: scale 800ms ease-in;
+    -webkit-animation-fill-mode: both;
+}

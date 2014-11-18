@@ -2,8 +2,10 @@
 
 var board = new Array();
 var hasConflicted = new Array();
+var isWin = false;
 var score = 0,
-    scoreAdd = 0;
+    scoreAdd = 0,
+    fontSize;
 var deviceWidth = window.screen.availWidth,
   cellWrap = deviceWidth * 0.92,
   borderRadius = deviceWidth * 0.02,
@@ -22,16 +24,16 @@ function prepareForMobile(){
     cellSideLength = 100 ;
     borderRadius = 6;
     cellSpace = 20;
-
+    fontSize = 40;
   }
-  $(".cell-wrap").css({"width":cellWrap,"height":cellWrap,"border-radius":borderRadius});
+  $(".cell-wrap").css({"width":cellWrap,"height":cellWrap,"border-radius":borderRadius,"fontSize":fontSize});
   $(".grid-cell").css({"width":cellSideLength,"height":cellSideLength,"border-radius":borderRadius})
-  $("header").css({"width":cellWrap});
-
-
+  $("header,.gameover,.gamesuccess").css({"width":cellWrap});
 
 }
+
 function newGame(){
+  $(".gameover").hide()
   //初始化棋盘格
   init();
   //在随机两个格子生成数字
@@ -85,6 +87,10 @@ function updateBoardView(){
         theNumberCell.css('background-color',getNumberBackgroundColor( board[i][j] ) );
         theNumberCell.css('color',getNumberColor( board[i][j] ) );
         theNumberCell.text( board[i][j] );
+        if(board[i][j] == 2048 &&  !isWin ){
+          theNumberCell.addClass("win")
+          isWin = true;
+        }
       }
     }
   $("#score").text(score);
@@ -116,24 +122,28 @@ $(document).keydown(function(event){
   switch (event.keyCode){
     case 37://left
       if(moveLeft()){
+
         setTimeout("generateRandom()",210)
         setTimeout("isGameOver()",300)
       }
       break;
     case 38://up
       if(moveUp()){
+
         setTimeout("generateRandom()",210)
         setTimeout("isGameOver()",300)
       }
       break;
     case 39://right
       if(moveRight()){
+
         setTimeout("generateRandom()",210)
         setTimeout("isGameOver()",300)
       }
       break;
     case 40://down
       if(moveDown()){
+
         setTimeout("generateRandom()",210)
         setTimeout("isGameOver()",300)
       }
@@ -158,23 +168,30 @@ document.addEventListener("touchend",function(event){
   if(Math.abs(deltaX) > Math.abs(deltaY)){
     if(deltaX<0){
       if(moveLeft()){
+
         setTimeout("generateRandom()",210)
+
         setTimeout("isGameOver()",300)
+
       }
     }else{
       if(moveRight()){
+
         setTimeout("generateRandom()",210)
+
         setTimeout("isGameOver()",300)
       }
     }
   }else{
     if(deltaY<0){
       if(moveUp()){
+
         setTimeout("generateRandom()",210)
         setTimeout("isGameOver()",300)
       }
     }else{
       if(moveDown()){
+
         setTimeout("generateRandom()",210)
         setTimeout("isGameOver()",300)
       }
@@ -227,7 +244,6 @@ function canMoveLeft(board){
   }
   return false
 }
-
 
 function moveRight(){
   if(!canMoveRight(board))
@@ -320,7 +336,6 @@ function canMoveUp(board){
 }
 
 
-
 function moveDown(){
   if(!canMoveDown(board))
     return false;
@@ -367,13 +382,13 @@ function canMoveDown(board){
   return false;
 }
 
-
 function isGameOver(){
   if(nospace(board) && !canMoveDown(board) && !canMoveUp(board) && !canMoveLeft(board) && !canMoveRight(board) ){
-    alert("game over")
+     $(".gameover").show()
   }
-
 }
+
+
 
 
 

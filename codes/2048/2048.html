@@ -14,11 +14,16 @@
 <header>
     <p class="title">2048</p>
 
-    <button  id="newGameBtn" onclick="newGame()">new game</button>
+    <button  class="gameBtn" onclick="newGame()">new game</button>
     <p class="score">score:<span id="score">0</span></p>
 </header>
 
 <div class="cell-wrap" id="cell-wrap">
+    <div class="gameover">
+        <p>Game over!</p>
+        <button  class="gameBtn" onclick="newGame()">try again</button>
+
+    </div>
     <div id="grid-cell-0-0" class="grid-cell"></div>
     <div id="grid-cell-0-1" class="grid-cell"></div>
     <div id="grid-cell-0-2" class="grid-cell"></div>
