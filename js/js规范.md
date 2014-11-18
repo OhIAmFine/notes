@@ -17,9 +17,21 @@ javascript代码规范
     var foo = 1,
         bar = foo;
     bar = 9;
-    console.log(foo,bar); // => 1, 9
+    console.log(foo, bar); // => 1, 9
     ```
-        
+  - **复杂类型**
+    + object
+    + array
+    + function
+    
+    ```javascript
+    var foo = [1, 9],
+        bar = foo;
+    bar[0] = 2;
+    console.log(foo[0], bar[0]); // => 2, 2
+    ```
+    
+    
    
 
 
