@@ -5,7 +5,7 @@ javascript代码规范
 
 类型
 ---------
-  - **原始值:直接传值**
+  - **原始值(数据类型):直接传值**
   
     + string
     + number
@@ -20,7 +20,7 @@ javascript代码规范
     bar = 9;
     console.log(foo, bar, name); // => 1, 9, jack
     ```
-  - **复杂类型**
+  - **复杂类型(引用类型)**
     + object
     + array
     + function
@@ -92,6 +92,45 @@ javascript代码规范
     ...
   }
   ```
+  
+  函数
+  ----
+  
+  - **不要在非函数块内声明一个函数**
+  
+  ```javascript
+  //bad
+  
+  if(true){
+    function test(){
+    }
+  }
+  
+  //good
+  
+  if(true){
+    var test = function test(){
+    }
+  }
+  ```
+  
+  属性
+  -----
+  
+  - **访问变量的属性时使用中括号(这样属性的名字可以使用空格等字符)**
+  
+  ```javascript
+  var obj1 = {"name" : "john"};
+  //bad
+  
+  console.log(obj1.name);
+  
+  //goog
+  
+  console.log(obj1[name]);
+  ```
+  
+  
   
 
 
