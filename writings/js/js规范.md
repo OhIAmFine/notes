@@ -121,12 +121,11 @@ javascript代码规范
   
   ```javascript
   var obj1 = {"name" : "john"};
-  //bad
   
+  //bad
   console.log(obj1.name);
   
   //good
-  
   console.log(obj1[name]);
   ```
   
