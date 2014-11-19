@@ -125,7 +125,7 @@ javascript代码规范
   
   console.log(obj1.name);
   
-  //goog
+  //good
   
   console.log(obj1[name]);
   ```
