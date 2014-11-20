@@ -48,7 +48,8 @@ js函数
 ---------------
 
  - call()和apply(),这两个方法的用途都是在特定的作用域调用函数,其实就是设置函数体内的this对象值.
-  ```javacript
+ 
+  ```javascript
   var color = 'red',
       obj2 = {"color":"blue"};
   
