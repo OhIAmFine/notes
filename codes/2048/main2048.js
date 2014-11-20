@@ -5,6 +5,7 @@ var hasConflicted = new Array();
 var isWin = false;
 var score = 0,
     scoreAdd = 0,
+    bestScore = 0,
     fontSize;
 var deviceWidth = window.screen.availWidth,
   cellWrap = deviceWidth * 0.92,
@@ -33,7 +34,9 @@ function prepareForMobile(){
 }
 
 function newGame(){
-  $(".gameover").hide()
+  $(".gameover").hide();
+  //重置本局分数
+  score = 0;
   //初始化棋盘格
   init();
   //在随机两个格子生成数字
@@ -96,10 +99,13 @@ function updateBoardView(){
   $("#score").text(score);
   if(scoreAdd != 0){
       $(".scoreAdd").remove();
-      $("<p class='scoreAdd'></p>").text("+"+scoreAdd).appendTo(".score")
+      $("<p class='scoreAdd'></p>").text("+"+scoreAdd).appendTo(".score");
       scoreAdd = 0;
   }
-
+  if(bestScore < score){
+      bestScore = score;
+      $("#bestScore").text(score);
+  }
 }
 function generateRandom(){
   //随机生成一个位置
