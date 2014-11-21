@@ -7,7 +7,7 @@ var
     scoreAdd = 0,
     fontSize;
 
-var deviceWidth = window.screen.width,
+var deviceWidth = window.screen.availWidth,
     cellWrap = deviceWidth * 0.92,
     borderRadius = deviceWidth * 0.02,
     cellSideLength = 0.18 * deviceWidth,
@@ -48,7 +48,7 @@ function prepareForMobile(){
         fontSize = 40;
     }
     $(".cell-wrap").css({"width":cellWrap,"height":cellWrap,"border-radius":borderRadius,"fontSize":fontSize});
-    $(".grid-cell").css({"width":cellSideLength,"height":cellSideLength,"border-radius":borderRadius})
+    $(".grid-cell").css({"width":cellSideLength,"height":cellSideLength,"border-radius":borderRadius});
     $("header,.gameover,.gamesuccess").css({"width":cellWrap});
 
 }

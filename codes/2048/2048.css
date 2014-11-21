@@ -23,7 +23,6 @@ header{
     margin: 10px auto;
     width: 500px;
     height: 500px;
-    padding: 20px;
     position: relative;
     text-align: center;
     background: #bbada0;
@@ -65,6 +64,10 @@ header{
     background-color:#fff;
     border:none; /*去除浏览器默认样式*/
     float: right;
+}
+.gameBtn:hover,.gameBtn:active,.gameBtn:link{
+    border: none;
+    outline: none;
 }
 .score{
     position: relative;
