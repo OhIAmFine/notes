@@ -7,7 +7,7 @@ var
     scoreAdd = 0,
     fontSize;
 
-var deviceWidth = window.screen.availWidth,
+var deviceWidth = window.screen.width,
     cellWrap = deviceWidth * 0.92,
     borderRadius = deviceWidth * 0.02,
     cellSideLength = 0.18 * deviceWidth,

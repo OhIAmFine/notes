@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta  name="viewport" content="width = device-width,height=device-height,initial-scale = 1.0">
+    <meta  name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>2048</title>
     <link href="2048.css" rel="stylesheet" type="text/css">
     <script src="jquery-1.8.3.min.js"></script>
@@ -12,10 +12,12 @@
 </head>
 <body>
 <header>
-    <p class="title">2048</p>
-    <p class="">best:<span id="bestScore">0</span></p>
-    <button  class="gameBtn" onclick="newGame()">new game</button>
-    <p class="score">score:<span id="score">0</span></p>
+    <p class="title">2048<button class="best">BEST:<span id="bestScore">0</span></button></p>
+
+    <button  class="gameBtn" onclick="newGame()">New Game</button>
+
+
+    <p class="score">SCORE:<span id="score">0</span></p>
 
 </header>
 
