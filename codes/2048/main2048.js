@@ -4,9 +4,8 @@ var board = new Array();
 var hasConflicted = new Array();
 var isWin = false;
 var score = 0,
-    scoreAdd = 0,
-    bestScore = 0,
-    fontSize;
+  scoreAdd = 0,
+  fontSize;
 
 var deviceWidth = window.screen.availWidth,
   cellWrap = deviceWidth * 0.92,
@@ -99,16 +98,18 @@ function updateBoardView(){
     }
   $("#score").text(score);
   if(scoreAdd != 0){
-      $(".scoreAdd").remove();
-      $("<p class='scoreAdd'></p>").text("+"+scoreAdd).appendTo(".score");
-      scoreAdd = 0;
+    $(".scoreAdd").remove();
+    $("<p class='scoreAdd'></p>").text("+"+scoreAdd).appendTo(".score");
+    scoreAdd = 0;
   }
-
-  if(bestScore < score){
-      bestScore = score;
-      $("#bestScore").text(bestScore);
+  if(localStorage.bestScore == undefined){
+    localStorage.bestScore = 0;
+  }else{
+    if(localStorage.bestScore < score){
+      localStorage.bestScore= score;
+    }
   }
-  localStorage.bestscore = bestScore;
+  $("#bestScore").text(localStorage.bestScore);
 }
 function generateRandom(){
   //随机生成一个位置
@@ -396,7 +397,7 @@ function canMoveDown(board){
 
 function isGameOver(){
   if(nospace(board) && !canMoveDown(board) && !canMoveUp(board) && !canMoveLeft(board) && !canMoveRight(board) ){
-     $(".gameover").show()
+    $(".gameover").show()
   }
 }
 
