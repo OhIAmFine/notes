@@ -3,7 +3,7 @@
 var board = [];
 var hasConflicted = [];
 var isWin = false;
-var score = 0,
+var score ,
   scoreAdd = 0,
   fontSize;
 
@@ -16,7 +16,25 @@ var startX=0,startY=0,endX=0,endY=0;
 
 $(document).ready(function(){
   prepareForMobile();
-  newGame();
+
+  if(localStorage.gameState == undefined){
+
+    newGame();
+  }else{
+    score = localStorage.score;
+    var gamestate =  localStorage.gameState.split(',').slice();
+    for( var i = 0 ; i < 4 ; i ++ ){
+      board[i] = [];
+      hasConflicted[i] = [];
+      for( var j = 0 ; j < 4 ; j ++ ){
+        board[i][j] = parseInt(gamestate[i*4+j],10);
+        hasConflicted[i][j] = false;
+      }
+    }
+    init();
+    updateBoardView()
+  }
+
 });
 function prepareForMobile(){
 
@@ -38,8 +56,19 @@ function newGame(){
   //重置本局分数
   score = 0;
   //初始化棋盘格
-  init();
+  for( var i = 0 ; i < 4 ; i ++ ){
+    board[i] = [];
+    hasConflicted[i] = [];
 
+    for( var j = 0 ; j < 4 ; j ++ ){
+      board[i][j] = 0;
+      hasConflicted[i][j] = false;
+    }
+  }
+  init();
+  //在随机两个格子生成数字
+  generateRandom();
+  generateRandom();
 }
 
 function init(){
@@ -50,33 +79,8 @@ function init(){
       gridCell.css('left', getPosLeft( i , j )  );
     }
   }
-  if(localStorage.gameState == undefined ){
-    for( var i = 0 ; i < 4 ; i ++ ){
-      board[i] = [];
-      hasConflicted[i] = [];
-      for( var j = 0 ; j < 4 ; j ++ ){
-        board[i][j] = 0;
-        hasConflicted[i][j] = false;
-      }
-    }
-    generateRandom();
-    generateRandom();
-  }else{
-    var gamestate =  localStorage.gameState.split(',').slice();
-    for( var i = 0 ; i < 4 ; i ++ ){
-      board[i] = [];
-      hasConflicted[i] = [];
-      for( var j = 0 ; j < 4 ; j ++ ){
-        board[i][j] = parseInt(gamestate[i*4+j],10);
-        hasConflicted[i][j] = false;
-      }
-    }
 
 
-  }
-
-
-  updateBoardView();
 }
 
 function updateBoardView(){
@@ -113,6 +117,9 @@ function updateBoardView(){
 
 
   $("#score").text(score);
+  if(localStorage.score == undefined){
+    localStorage.score = score;
+  }
   if(scoreAdd != 0){
     $(".scoreAdd").remove();
     $("<p class='scoreAdd'></p>").text("+"+scoreAdd).appendTo(".score");
@@ -126,6 +133,7 @@ function updateBoardView(){
     }
   }
   $("#bestScore").text(localStorage.bestScore);
+
 }
 function generateRandom(){
   //随机生成一个位置
