@@ -1,7 +1,7 @@
 
 
-var board = new Array();
-var hasConflicted = new Array();
+var board = [];
+var hasConflicted = [];
 var isWin = false;
 var score = 0,
   scoreAdd = 0,
@@ -39,37 +39,50 @@ function newGame(){
   score = 0;
   //初始化棋盘格
   init();
-  //在随机两个格子生成数字
-  generateRandom();
-  generateRandom();
+
 }
 
 function init(){
-  for( var i = 0 ; i < 4 ; i ++ )
+  for( var i = 0 ; i < 4 ; i ++ ){
     for( var j = 0 ; j < 4 ; j ++ ){
-
       var gridCell = $('#grid-cell-'+i+"-"+j);
-
       gridCell.css('top', getPosTop( i , j )  );
       gridCell.css('left', getPosLeft( i , j )  );
     }
-
-  for( var i = 0 ; i < 4 ; i ++ ){
-    board[i] = new Array();
-    hasConflicted[i] = new Array();
-
-    for( var j = 0 ; j < 4 ; j ++ ){
-      board[i][j] = 0;
-      hasConflicted[i][j] = false;
-    }
   }
+  if(localStorage.gameState == undefined ){
+    for( var i = 0 ; i < 4 ; i ++ ){
+      board[i] = [];
+      hasConflicted[i] = [];
+      for( var j = 0 ; j < 4 ; j ++ ){
+        board[i][j] = 0;
+        hasConflicted[i][j] = false;
+      }
+    }
+    generateRandom();
+    generateRandom();
+  }else{
+    var gamestate =  localStorage.gameState.split(',').slice();
+    for( var i = 0 ; i < 4 ; i ++ ){
+      board[i] = [];
+      hasConflicted[i] = [];
+      for( var j = 0 ; j < 4 ; j ++ ){
+        board[i][j] = parseInt(gamestate[i*4+j],10);
+        hasConflicted[i][j] = false;
+      }
+    }
+
+
+  }
+
 
   updateBoardView();
 }
 
 function updateBoardView(){
   $(".number-cell").remove();
-  for( var i = 0 ; i < 4 ; i ++ )
+  for( var i = 0 ; i < 4 ; i ++ ){
+    hasConflicted[i] = [];
     for( var j = 0 ; j < 4 ; j ++ ){
       hasConflicted[i][j] = false;
       $(".cell-wrap").append( '<div class="number-cell"  id="number-cell-'+i+'-'+j+'"></div>' );
@@ -96,6 +109,9 @@ function updateBoardView(){
         }
       }
     }
+  }
+
+
   $("#score").text(score);
   if(scoreAdd != 0){
     $(".scoreAdd").remove();
@@ -117,6 +133,7 @@ function generateRandom(){
   var randomY = parseInt(Math.random()*4);
 
   while(true){
+
     if(board[randomX][randomY] == 0){
       break;
     }
@@ -124,9 +141,10 @@ function generateRandom(){
     randomY = parseInt(Math.random()*4);
   }
   var randomNum = Math.random()<0.5?2:4;
+
   board[randomX][randomY] = randomNum;
   showNumAnimation(randomX,randomY,randomNum);
-
+  localStorage.gameState = board.slice();
 }
 $(document).keydown(function(event){
   switch (event.keyCode){
