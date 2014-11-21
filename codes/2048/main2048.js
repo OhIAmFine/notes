@@ -7,6 +7,7 @@ var score = 0,
     scoreAdd = 0,
     bestScore = 0,
     fontSize;
+
 var deviceWidth = window.screen.availWidth,
   cellWrap = deviceWidth * 0.92,
   borderRadius = deviceWidth * 0.02,
@@ -102,10 +103,12 @@ function updateBoardView(){
       $("<p class='scoreAdd'></p>").text("+"+scoreAdd).appendTo(".score");
       scoreAdd = 0;
   }
+
   if(bestScore < score){
       bestScore = score;
-      $("#bestScore").text(score);
+      $("#bestScore").text(bestScore);
   }
+  localStorage.bestscore = bestScore;
 }
 function generateRandom(){
   //随机生成一个位置
