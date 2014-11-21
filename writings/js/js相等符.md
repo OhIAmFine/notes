@@ -14,15 +14,18 @@ js相等符
     - 如果两个操作数都是对象,则比较它们是不是同一个对象.如果两个操作数都指向同一个对象,则相等操作符返回true;否则,返回false
  
   3. 一些比较结果:
-    - null == undefined    // => true
-    - "NaN" == NaN         // => false
-    - NaN == NaN           // => false
-    - NaN != NaN           // => true
-    - undefined == 0       // => false
-    - flase == 0           // => true  
-    - "5" == 5             // => true
-    - true == 1            // => true
-    - true == 2            // => false
+  
+    ```javascript
+    null == undefined;    // => true
+    "NaN" == NaN;         // => false
+    NaN == NaN;           // => false
+    NaN != NaN;           // => true
+    undefined == 0;       // => false
+    flase == 0;           // => true  
+    "5" == 5;             // => true
+    true == 1;            // => true
+    true == 2;            // => false
+    ```
 
 二、全等和不全等,"==="和"!=="比较之前不做转换
 -----------------------------------------------
