@@ -44,7 +44,7 @@ header{
     line-height: 100px;
 }
 .gameBtn {
-    padding: 6px 10px;
+    padding: 6px;
     font-size: 18px;
     width: 110px;
     line-height: 40px;
@@ -56,19 +56,18 @@ header{
     cursor: pointer;
 }
 .best{
-    padding: 6px 10px;
     font-size: 18px;
     width: 160px;
-    line-height: 40px;
     text-align: right;
     background-color:#fff;
     border:none; /*去除浏览器默认样式*/
     float: right;
 }
-.gameBtn:hover,.gameBtn:active,.gameBtn:link{
+.gameBtn:hover,.gameBtn:active,.gameBtn:link,.gameBtn:focus{
     border: none;
     outline: none;
 }
+
 .score{
     position: relative;
     padding: 6px 10px;
