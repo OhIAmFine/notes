@@ -63,8 +63,37 @@ js函数
   ```
  
  - apply()接收其中运行的函数作用域和参数数组,而call()方法必须逐个列举每个参数 
+
+五、函数定义的两种方式
+-------------------------
+  
+ - 函数声明
  
+ ```javascript
+ function foo(){
+   //some code
+ }
+ ```
+
+ - 函数表达式
+  
+ ```javascript
+ //以下两种方式都属于使用函数表达式定义函数
  
+ var foo1 = function(){
+   //some code
+ }
+ 
+ console.log(foo1.name) // => 控制台打印空字符串
+ 
+ //两者的区别是foo1的name属性是空字符串,foo2的name属性为"foo2"
+ 
+ var foo2 = function foo2(){
+   //some code
+ }
+ 
+ console.log(foo2.name) // => foo2
+ ```
  
 
   
