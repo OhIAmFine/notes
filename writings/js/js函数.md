@@ -83,7 +83,6 @@ js函数
  var foo1 = function(){
    //some code
  }
- 
  console.log(foo1.name) // => 控制台打印空字符串
  
  //两者的区别是foo1的name属性是空字符串,foo2的name属性为"foo2"
@@ -91,7 +90,6 @@ js函数
  var foo2 = function foo2(){
    //some code
  }
- 
  console.log(foo2.name) // => foo2
  ```
  
