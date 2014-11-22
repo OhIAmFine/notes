@@ -93,5 +93,7 @@ js函数
  console.log(foo2.name) // => foo2
  ```
  
+注意:两种方式在变量提升时会有差异
+ 
 
   
