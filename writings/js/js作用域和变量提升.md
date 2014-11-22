@@ -95,21 +95,22 @@ js作用域和变量提升
     
       ```javascript
       //这样调用不会报错
-      foo();
-      function foo(){
+      foo(); // => yes
       
+      function foo(){
+        console.log("yes");
       }
       
       ```
       
-    + 函数表达式提升.使用函数表达式定义的函数"var foo = function(){}",只有函数名提升到当前所在作用域的顶端,函数体则
-      没有,所以在定义之前调用会报错.
+    + 函数表达式提升.使用函数表达式定义的函数"var foo = function(){}",只有函数名提升到当前所在作用域的顶端,函数体           没有,所以在定义之前调用会报错.
 
       ```javascript
       //这样调用会报错
-      foo();
-      var foo = function(){
+      foo(); // => 报错
       
+      var foo = function(){
+        console.log("no");
       }
       
       ```
