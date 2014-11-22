@@ -94,20 +94,18 @@ javascript代码规范
   ```
   
 函数
- ----
+---------
   
   - **不要在非函数块内声明一个函数**
   
   ```javascript
   //bad
-  
   if(true){
     function test(){
     }
   }
   
   //good
-  
   if(true){
     var test = function test(){
     }
@@ -128,7 +126,36 @@ javascript代码规范
   //good
   console.log(obj1[name]);
   ```
+
+变量
+---------
+
+  - **总是使用var关键字,最后再声明未赋值的变量**
   
+    ```javascript
+    var goSportsTeam = true,
+        dragonball,
+        length,
+        i;
+    ```
+    
+  - **在作用域顶端声明变量**
+  
+    ```javascript
+    function() {
+      if (!arguments.length) {
+        return false;
+      }
+
+      var name = getName();
+
+      return true;
+    }
+    ```
+    
+    
+    
+    
   
   
 
