@@ -14,12 +14,23 @@ js函数
 
   ```javascript
   // 阶乘函数
-  function factorial(num){
+  
+  //非严格模式下的写法
+  function factorial1(num){
     if(num <= 1)
     return 1;
    
     return num * arguments.callee(num-1); // 不使用factorial是为了消除耦合性
   }
+  
+  //严格模式下可以使用以下写法
+  var factorial2 = (function f(num){
+      if(num <= 1)
+      return 1;
+   
+      return num * f(num-1);    
+  }) 
+  
   ```
 
  - this,它是函数据以执行的环境对象 
