@@ -11,6 +11,7 @@ js作用域和变量提升
   
     ```c
     //c语言
+    
     #include <stdio.h>
     int main() {
    	  int x = 1;
@@ -26,6 +27,7 @@ js作用域和变量提升
     
     ```javascript
     //js代码
+    
     var x = 1;
     console.log(x); // 1
     if (true) {
