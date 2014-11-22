@@ -2,7 +2,6 @@ body{
     font-family: "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     color: #776e65;
-
 }
 a{
     text-decoration: none;
@@ -10,6 +9,8 @@ a{
 *{
     box-sizing: border-box;
 }
+
+
 header{
     margin: 20px auto;
     width: 500px;
@@ -18,30 +19,6 @@ header{
     font-size: 50px;
     font-weight: bold;
     margin: 0;
-}
-.cell-wrap{
-    margin: 10px auto;
-    width: 500px;
-    height: 500px;
-    position: relative;
-    text-align: center;
-    background: #bbada0;
-    border-radius: 10px;
-    font-size: 20px;
-}
-.grid-cell {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border-radius:6px ;
-    background: #ccc0b3;
-}
-.number-cell{
-    position: absolute;
-    text-align: center;
-    border-radius: 6px;
-
-    line-height: 100px;
 }
 .gameBtn {
     padding: 6px;
@@ -67,7 +44,6 @@ header{
     border: none;
     outline: none;
 }
-
 .score{
     position: relative;
     padding: 6px 10px;
@@ -82,6 +58,34 @@ header{
     margin: 0;
     cursor: default;
 }
+
+.cell-wrap{
+    margin: 10px auto;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    text-align: center;
+    background: #bbada0;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.grid-cell {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius:6px ;
+    background: #ccc0b3;
+}
+.number-cell{
+    position: absolute;
+    text-align: center;
+    border-radius: 6px;
+    line-height: 100px;
+}
+
+
+
+/*分数增加的动画效果*/
 @-webkit-keyframes move-up {
     0% {
         top: 0px;
@@ -90,18 +94,62 @@ header{
     100% {
         top: -50px;
         opacity: 0; } }
+@-moz-keyframes move-up {
+    0% {
+        top: 25px;
+        opacity: 1; }
+
+    100% {
+        top: -50px;
+        opacity: 0; }
+}
+@-o-keyframes move-up {
+    0% {
+        top: 25px;
+        opacity: 1; }
+
+    100% {
+        top: -50px;
+        opacity: 0; }
+}
+
+@keyframes move-up {
+    0% {
+        top: 25px;
+        opacity: 1; }
+
+    100% {
+        top: -50px;
+        opacity: 0; }
+}
+
+
+/*第一次出现2048的动画效果*/
 @-webkit-keyframes scale{
     0%{
-        -moz-transform:scale(2,2);
         -webkit-transform:scale(2,2);
-        -o-transform:scale(2,2);
+    }
+    100%{
+        -webkit-transform:scale(1,1);
+    }
+}
+@-moz-keyframes scale{
+    0%{
+        -moz-transform:scale(2,2);
     }
     100%{
         -moz-transform:scale(1,1);
-        -webkit-transform:scale(1,1);
+    }
+}
+@-o-keyframes scale{
+    0%{
+        -o-transform:scale(2,2);
+    }
+    100%{
         -o-transform:scale(1,1);
     }
 }
+
 .scoreAdd{
     position: absolute;
     right: 30px;
@@ -111,7 +159,11 @@ header{
     color: rgba(119, 110, 101, 0.9);
     z-index: 100;
     -webkit-animation: move-up 600ms ease-in;
+    -moz-animation: move-up 600ms ease-in;
+    -o-animation: move-up 600ms ease-in;
     -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
 }
 
 .gameover{
@@ -129,5 +181,9 @@ header{
 }
 .win{
     -webkit-animation: scale 800ms ease-in;
+    -moz-animation: scale 800ms ease-in;
+    -o-animation: scale 800ms ease-in;
     -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
 }
