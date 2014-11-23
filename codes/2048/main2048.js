@@ -7,8 +7,17 @@ var
   scoreAdd = 0,
   fontSize;
 
-var deviceWidth = document.documentElement.clientWidth,
-  cellWrap = deviceWidth * 0.92,
+//获取视口的宽度
+var deviceWidth = window.innerWidth;
+if(typeof  deviceWidth != "number"){
+  if(document.compatMode == "CSS1Compat"){
+      deviceWidth = document.documentElement.clientWidth;
+  }else{
+      deviceWidth = document.body.clientWidth;
+  }
+}
+
+var cellWrap = deviceWidth * 0.92,
   borderRadius = deviceWidth * 0.02,
   cellSideLength = 0.18 * deviceWidth,
   cellSpace = 0.04 * deviceWidth;
