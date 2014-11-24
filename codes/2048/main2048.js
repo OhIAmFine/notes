@@ -8,14 +8,14 @@ var
   fontSize;
 
 //获取视口的宽度
-var deviceWidth = window.innerWidth;
-if(typeof  deviceWidth != "number"){
+var deviceWidth = screen.availWidth;
+/*if(typeof  deviceWidth != "number"){
   if(document.compatMode == "CSS1Compat"){
       deviceWidth = document.documentElement.clientWidth;
   }else{
       deviceWidth = document.body.clientWidth;
   }
-}
+}*/
 
 var cellWrap = deviceWidth * 0.92,
   borderRadius = deviceWidth * 0.02,
@@ -55,7 +55,7 @@ function prepareForMobile(){
   }
   $(".cell-wrap").css({"width":cellWrap,"height":cellWrap,"border-radius":borderRadius,"fontSize":fontSize});
   $(".grid-cell").css({"width":cellSideLength,"height":cellSideLength,"border-radius":borderRadius});
-  $("header,.gameover,.gamesuccess").css({"width":cellWrap});
+  $("header,.gameover").css({"width":cellWrap});
 
 }
 
