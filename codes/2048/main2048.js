@@ -154,7 +154,7 @@ function generateRandom(){
     randomX = parseInt(Math.random()*4);
     randomY = parseInt(Math.random()*4);
   }
-  var randomNum = Math.random()<0.5?2:4;
+  var randomNum = Math.random()<0.9?2:4;
 
   board[randomX][randomY] = randomNum;
   showNumAnimation(randomX,randomY,randomNum);
