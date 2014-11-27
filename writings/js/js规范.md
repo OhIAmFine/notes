@@ -153,10 +153,66 @@ javascript代码规范
     }
     ```
     
-    
-    
-    
+条件表达式和相等
+------------------
+  - **使用===和!===代替==和!=**
   
+  - **使用快捷方式**
+  
+    ```javascript
+    
+    //bad
+    if(name !== ""){
+      // some code
+    }
+    
+    //good
+    if(name){
+      // some code
+    }
+    
+    //bad
+    if(collections.lengh > 0){
+      // some code
+    }
+    
+    //good
+    if(collections){
+      // some code
+    }
+    
+    ```
+    
+代码块
+---------
+
+  - **多行代码块就使用大括号,单行不用**
+  
+    ```javascript
+    
+    //bad 
+    if(test)
+    return false;
+    
+    //good
+    if(test) return false;
+      
+    //good 
+    if(test){
+      return false;
+    }
+    
+    //bad
+    function() { return false;}
+    
+    //good
+    function(){
+      return false;
+    }
+    
+    ```
+    
+
   
 
 
