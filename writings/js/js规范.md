@@ -212,7 +212,43 @@ javascript代码规范
     
     ```
     
+空格
+--------
 
+  + **在大括号前放一个空格**
+  
+    ```javascript
+    //good
+    function test() {
+      //some code
+    }
+    
+    
+    ```
+  
+  + **运算符号以一个空格分开** 
+
+    ```javascript
+    //good
+    var c = a + b;
+    
+    ```
+    
+  + **使用长方法链式时,使用缩进**
+  
+    ```javascript
+    // bad
+    $('#items').find('.selected').highlight().end().find('.open').updateCount();
+
+    // good
+    $('#items')
+      .find('.selected')
+        .highlight()
+        .end()
+      .find('.open')
+        .updateCount();
+        
+    ```
   
 
 
