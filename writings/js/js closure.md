@@ -1,5 +1,5 @@
 js闭包
-
+ 
   ```javascript
   function foo(x) {
     var tmp = 3;
@@ -18,3 +18,5 @@ js闭包
   ```
   
   第一次调用bar()会创建 **x.memb** = 1,以后每一次调用bar()都会增加x.memb的值
+
+参考链接:[How do JavaScript closures work?](http://stackoverflow.com/questions/111102/how-do-javascript-closures-work)
