@@ -13,7 +13,7 @@
  
  http://stackoverflow.com/questions/7452341/what-does-void-0-mean
 
-+ camelize 方法 将"_或者-"风格转换为驼峰风格
+ + camelize 方法 将"_或者-"风格转换为驼峰风格
   ```javascript
     function camelize(target){
       if(target.indexOf('-') < 0 && target.indexOf('_') < 0){
