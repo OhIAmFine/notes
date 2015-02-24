@@ -24,3 +24,11 @@
       })
     }
   ```
+  
+
+ + pad方法 将字符串的某一端添加字符串
+  ```javascript
+    function pad(target, n){
+      return (0..toFixed(n) + target).slice(-n);
+    }
+  ```
