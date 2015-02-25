@@ -61,3 +61,20 @@
     }
     
   ```
+  
+- 数组的扩展与修复
+ 
+ + 首先对ie6,7,8的修复(直接在Array原型上修复)
+  ```js
+    Array.prototype.indexOf = function(item, index){
+      var n = this.length, i = ~~index; // 按位取反运算符
+      if(i < 0){
+        i += n;
+      }
+      for(; i < n;; i++){
+        if(this[i] === item) return i;
+      }
+      return -1;
+    }
+    
+  ``` 
