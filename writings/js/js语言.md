@@ -44,14 +44,15 @@
   //版本二
     function trim(str){
       var whitespace = ' \n\r\t\f\x0b\xa0\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u200b\u2028\u2029\u3000';  //把可能空白符全列出来
-      for (var i = 0,len = str.length; i < len; i++) {
-        if (whitespace.indexOf(str.charAt(i)) === -1) {
+      //拿掉前面的空白
+      for(var i = 0,len = str.length; i < len; i++){
+        if(whitespace.indexOf(str.charAt(i)) === -1){
           str = str.substring(i);
           break;
         }
-      }  //拿掉前面的空白
-      for (i = str.length - 1; i >= 0; i--) {
-        if (whitespace.indexOf(str.charAt(i)) === -1) {
+      }  
+      for(i = str.length - 1; i >= 0; i--){
+        if(whitespace.indexOf(str.charAt(i)) === -1){
           str = str.substring(0, i + 1);
           break;
         }
