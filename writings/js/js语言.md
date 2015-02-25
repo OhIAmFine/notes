@@ -32,3 +32,11 @@
       return (0..toFixed(n) + target).slice(-n);
     }
   ```
+
+
+ + trim方法 
+  ```javascript
+    function trim(str){
+      return str.replace(/\s\s*/, '').replace(/\s\s*$/, '');
+    }
+  ```
