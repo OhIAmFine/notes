@@ -71,7 +71,7 @@
       if(i < 0){
         i += n;
       }
-      for(; i < n;; i++){
+      for(; i < n; i++){
         if(this[i] === item) return i;
       }
       return -1;
