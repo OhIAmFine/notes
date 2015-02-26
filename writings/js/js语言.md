@@ -120,5 +120,38 @@
     
   ``` 
   
+ + removeAt方法:移除数组中指定位置的元素，返回布尔表示成功与否
  
+  ```js
+    function removeAt(target, index){
+      return !!target.splice(index, 1).length;
+    }
   
+  ```
+  
+ + random方法:随机取出数组中的一个元素
+ 
+  ```js
+    function random(target){
+      return target[Math.floor(Math.random()) * target.length];
+    }
+  
+  ```  
+
+ + unique方法:去重，返回一个没有重复元素的新数组
+ //使用标签(label)命名循环体用以控制流  
+ // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label
+  ```js
+    function unique(target){
+      var result = [];
+      loop: for(var i = 0, n = target.length; i < n; i++){
+        for(var x = i + 1; x < n; x++){
+          if(target[x] === target[i])
+            continue loop;
+          }
+          result.push(target[i]);
+        }
+        return result;
+      }
+  
+  ```  
