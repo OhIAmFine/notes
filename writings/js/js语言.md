@@ -77,4 +77,47 @@
       return -1;
     }
     
+  ```
+  
+  ```js
+  //https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+    if ('function' !== typeof Array.prototype.reduce) {
+  Array.prototype.reduce = function(callback, opt_initialValue){
+    'use strict';
+    if (null === this || 'undefined' === typeof this) {
+      throw new TypeError(
+          'Array.prototype.reduce called on null or undefined');
+    }
+    if ('function' !== typeof callback) {
+      throw new TypeError(callback + ' is not a function');
+    }
+    var index, value,
+        length = this.length >>> 0,
+        isValueSet = false;
+    if (1 < arguments.length) {
+      value = opt_initialValue;
+      isValueSet = true;
+    }
+    for (index = 0; length > index; ++index) {
+ //[].hasOwnProperty(0) ->会返回false,因为数组也是继承了object,会检测该数组的index位置上是否设有值(todo:空,null..)
+      if (this.hasOwnProperty(index)) {
+        if (isValueSet) {
+          value = callback(value, this[index], index, this);
+        }
+        else {
+          value = this[index];
+          isValueSet = true;
+        }
+      }
+    }
+    if (!isValueSet) {
+      throw new TypeError('Reduce of empty array with no initial value');
+    }
+    return value;
+  };
+}
+    
   ``` 
+  
+ 
+  
