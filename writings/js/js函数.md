@@ -105,6 +105,14 @@ js函数
  ```
  
 注意:两种方式在变量提升时会有差异
- 
+
+
+六、apply
+----------
+
+ apply:方法能劫持另外一个对象的方法，继承另外一个对象的属性.  
+ Function.apply(obj,args)方法能接收两个参数   
+   obj：这个对象将代替Function类里this对象   
+   args：这个是数组，它将作为参数传给Function（args-->arguments）
 
   
