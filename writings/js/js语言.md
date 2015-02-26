@@ -99,7 +99,8 @@
       isValueSet = true;
     }
     for (index = 0; length > index; ++index) {
- //[].hasOwnProperty(0) ->会返回false,因为数组也是继承了object,会检测该数组的index位置上是否设有值(todo:空,null..)
+ //[].hasOwnProperty(0) ->会返回false,因为数组也是继承了object,会检测该数组的index位置上是否设有值(real value)
+ //http://adripofjavascript.com/blog/drips/the-uses-of-in-vs-hasownproperty.html
       if (this.hasOwnProperty(index)) {
         if (isValueSet) {
           value = callback(value, this[index], index, this);
