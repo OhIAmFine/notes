@@ -140,8 +140,8 @@
 
  + unique方法:去重，返回一个没有重复元素的新数组  
  
- //使用标签(label)命名循环体用以控制流  
- // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label
+ 使用标签(label)命名循环体用以控制流  
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label
   ```js
     function unique(target){
       var result = [];
