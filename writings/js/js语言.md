@@ -149,10 +149,10 @@
         for(var x = i + 1; x < n; x++){
           if(target[x] === target[i])
             continue loop;
-          }
-          result.push(target[i]);
         }
-        return result;
+          result.push(target[i]);
       }
+      return result;
+    }
   
   ```  
