@@ -156,3 +156,14 @@
     }
   
   ```  
+
+ + intersect方法:对两个数组取交集  
+ 
+  ```js
+    function(target, array) {
+      return target.filter(function(n) {
+        return ~array.indexOf(n);  //不存在的值则为-1，取~后为0；存在的都得到非负整数，取~后得到负整数就转换为true
+      });
+    },
+  
+  ```  
