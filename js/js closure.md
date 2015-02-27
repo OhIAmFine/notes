@@ -1,5 +1,10 @@
 js闭包
  
+ + 闭包是指函数有自由独立的变量。换句话说，定义在闭包中的函数可以“记忆”它创建时候的环境。
+   这链接讲的太经典了: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Closures
+   
+ 
+ + 闭包的实践意义。闭包允许将函数与其所操作的某些数据（环境）关连起来。
   ```javascript
   function foo(x) {
     var tmp = 3;
