@@ -176,3 +176,34 @@
     },
   
   ```  
+
+ + 抹平Array原生方在个浏览器的差异
+  - 修正IE67下unshift不返回数组长度的问题
+  ```js
+    if ([].unshift(1) !== 1) {
+        var _unshift = Array[P].unshift;
+        Array[P].unshift = function() {
+            _unshift.apply(this, arguments);
+            return this.length; //返回新数组的长度
+        }
+    }
+
+    
+  ```
+  
+  - 修正splice一个参数的情况下,IE678默第二个参数为0,其他浏览器为数组长度的问题
+  
+  ```js
+    if ([1, 2, 3].splice(1).length === 0) {
+        var _splice = Array[P].splice;
+        Array[P].splice = function(a) {
+            if (arguments.length === 1) {
+                return _splice.call(this, a, this.length)
+            } else {
+                return _splice.apply(this, arguments);
+            }
+        }
+    }
+  
+  ```
+  
