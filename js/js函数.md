@@ -107,8 +107,8 @@ js函数
 注意:两种方式在变量提升时会有差异
 
 
-六、apply
-----------
+六、apply方法
+--------------
 
  apply:方法能劫持另外一个对象的方法，继承另外一个对象的属性.  
  Function.apply(obj,args)方法能接收两个参数   
@@ -116,3 +116,8 @@ js函数
    args：这个是数组，它将作为参数传给Function（args-->arguments）
 
   
+七、bind方法
+-------------  
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+
+  bind()方法会创建一个新函数,称为绑定函数.当调用这个绑定函数时,绑定函数会以创建它时传入 bind()方法的第一个参数作为   this,传入 bind() 方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数.
