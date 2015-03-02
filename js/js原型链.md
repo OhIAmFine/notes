@@ -23,3 +23,23 @@ person.sayAge();  // 以读取方式访问一个实例的属性时,先在该实�
 person.sayName(); // 原型链实现的继承,搜索过程沿着原型链继续向上
 
 ```
+
+```js
+function A(){
+  console.log(this.__proto__.aa); //1
+  this.aa = 2;
+}
+A.prototype = {
+ aa : 1
+}
+var a = new A;
+console.log(a.aa); //2
+a.__proto__.aa = 3;
+delete a.aa; // 删掉特权属性，暴露原型上的同名属性
+console.log(a.aa); // 3
+var b = new A;
+console.log(b.aa);
+delete b.aa;
+console.log(b.aa);
+
+```
