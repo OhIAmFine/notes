@@ -2,7 +2,7 @@ css目前实现动画的两种方式:transition and key-frame
 
 + transition
   
-  当transition触发时,该元素的一个css属属性从一个值变化另外一个值,主要由一些元素的伪类变化来触发
+  当transition触发时,该元素的一个css属性从一个值变化另外一个值,主要由一些元素的伪类变化来触发
   
   
 + keyframe
