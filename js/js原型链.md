@@ -43,3 +43,12 @@ delete b.aa;
 console.log(b.aa);
 
 ```
+
+js new操作
+-----------------
+
+ 1. 创建一个空对象instance
+ 2. instance.\__proto\__ = instanceClass.prototype
+ 3. 将构造器函数里面的this = instance
+ 4. 执行构造器里面的代码
+ 5. 判定有没有返回值，没有返回值默认为undefined，如果返回值为复合数据类型，则直接返回，否则返回this
