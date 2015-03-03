@@ -52,3 +52,29 @@ js new操作
  3. 将构造器函数里面的this = instance
  4. 执行构造器里面的代码
  5. 判定有没有返回值，没有返回值默认为undefined，如果返回值为复合数据类型，则直接返回，否则返回this
+  
+ 
+js \__proto__
+------------------
+
+```js
+function A(){}
+A.prototype = {
+  aa: 1
+}
+
+function bridge(){};
+bridge.prototype = A.prototype;
+
+function B(){}
+B.prototype = new bridge();
+B.prototype.constructor = B;
+var b = new B;
+B.prototype.cc = function(){
+  alert(3)
+}
+console.log(b.__proto__ === B.prototype); // true
+console.log(b.__proto__.__proto__ === A.prototype); // true
+
+
+```
