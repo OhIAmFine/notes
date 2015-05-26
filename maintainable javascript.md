@@ -12,3 +12,5 @@
                anotherSomethingElse;
 
   ```
+- **Blank Lines**: Adding a blank line before each flow control statement.
+
