@@ -5,7 +5,7 @@
 
 // Good: Break after operator, following line indented two levels
 callAFunction(document, element, window, "some string value", true, 123,
-navigator);
+        navigator);
 
 //There is one exception to this rule.
 var result = something + anotherThing + yetAnotherThing + somethingElse +
