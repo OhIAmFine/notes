@@ -29,6 +29,42 @@
       doSomethingElse();
   }
   ```
+- **switch**:
+    + Each case statement is indented one level from the switch keyword.
+    + There is an extra line before and after each case statement from the second one on.
+    + Omitting default when there is no default action and annotate it using a comment
+  ```js
+  switch( condition ) {
+      case "first":
+          // code
+          break;
+          
+      case "second":
+          // code
+          break;
+          
+      case "third":
+          // code
+          break;
+          
+      default:
+          // code
+  };
+  
+  switch( condition ) {
+    case "first":
+        // code
+        break;
+        
+    case "second":
+        // code
+        break;
+        
+    // no default
+  }
+  ```
+
+
 
 
   
