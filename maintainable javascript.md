@@ -53,30 +53,30 @@
   };
   
   switch(condition) {
-    // obvious fall through
-    case "first":
-    case "second":
-        // code
-        break;
+      // obvious fall through
+      case "first":
+      case "second":
+          // code
+          break;
         
-    case "third":
-        // code
+      case "third":
+          // code
         
-        /*falls through*/
-    default:
-        // code
+          /*falls through*/
+      default:
+          // code
 }
   
   switch(condition) {
-    case "first":
-        // code
-        break;
+      case "first":
+          // code
+          break;
         
-    case "second":
-        // code
-        break;
+      case "second":
+          // code
+          break;
         
-    // no default
+      // no default
   }
   ```
 
