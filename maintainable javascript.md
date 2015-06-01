@@ -20,6 +20,14 @@
 - **Array literals**: Instead of using the Array constructor, you can use two square brackets and include the initial members of the array.
 - **Single-Line Comments**: One empty line preceding comment, right indention and enough space between code and comment
 - **Multiline Comments**:  The style is to have at least three lines: one for the /*, one or more lines beginning with a * that is aligned with the * on the previous line, and the last line for */.
+- **Statements**: 
+  ```js
+  if ( condition ) {
+      doSomething();
+  } else {
+      doSomethingElse();
+  }
+  ```
 
 
   
