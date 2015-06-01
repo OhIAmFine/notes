@@ -23,7 +23,7 @@
 - **Statements**: 
   ```js
   
-  if ( condition ) {
+  if (condition) {
       doSomething();
   } else {
       doSomethingElse();
@@ -32,9 +32,10 @@
 - **switch**:
     + Each case statement is indented one level from the switch keyword.
     + There is an extra line before and after each case statement from the second one on.
+    + Falling through.
     + Omitting default when there is no default action and annotate it using a comment
   ```js
-  switch( condition ) {
+  switch(condition) {
       case "first":
           // code
           break;
@@ -51,7 +52,22 @@
           // code
   };
   
-  switch( condition ) {
+  switch(condition) {
+    // obvious fall through
+    case "first":
+    case "second":
+        // code
+        break;
+        
+    case "third":
+        // code
+        
+        /*falls through*/
+    default:
+        // code
+}
+  
+  switch(condition) {
     case "first":
         // code
         break;
