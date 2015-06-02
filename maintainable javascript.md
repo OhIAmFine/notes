@@ -131,8 +131,8 @@
   var name = "Nicholas";
   console.log(name.toUpperCase());
   
-  // The author property has vanished after the second line. That’s because the temporaryString object representing the
-  // string was destroyed after line 2 executed, and a new String object was created for line 3.
+  // The author property has vanished after the second line. That’s because the temporaryString object
+  // representing the string was destroyed after line 2 executed, and a new String object was created for line 3.
   var name = "Nicholas";
   name.author = true;
   console.log(name.author); // undefined
