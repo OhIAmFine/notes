@@ -98,6 +98,7 @@
       console.log("Property value is " + object[prop]);
   }
   ```
+- **Variable Declarations**: All var statements are hoisted to the top of the containing function regardless of where they actually occur in the code.Therefore, a popular style is to have all variables declared at the top of a function instead of scattered throughout
 
 
 
