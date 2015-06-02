@@ -79,7 +79,25 @@
       // no default
   }
   ```
+- **For-in Loop**: 
+  + Using hasOwnProperty() for for-in loops unless you’re intentionally looking up the prototype chain, in which case it should be indicated with a comment.
+  + Another area of focus with for-in loops is their usage with objects.
 
+  ```js
+  var prop;
+  for (prop in object) {
+      if (object.hasOwnProperty(prop)) {
+          console.log("Property name is " + prop);
+          console.log("Property value is " + object[prop]);
+      }
+  }
+  
+  
+  for (prop in object) { // include prototype properties
+      console.log("Property name is " + prop);
+      console.log("Property value is " + object[prop]);
+  }
+  ```
 
 
 
