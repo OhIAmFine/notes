@@ -98,7 +98,33 @@
       console.log("Property value is " + object[prop]);
   }
   ```
-- **Variable Declarations**: All var statements are hoisted to the top of the containing function regardless of where they actually occur in the code.Therefore, a popular style is to have all variables declared at the top of a function instead of scattered throughout
+- **Variable Declarations**: 
+  + All var statements are hoisted to the top of the containing function regardless of where they actually occur in the code.Therefore, a popular style is to have all variables declared at the top of a function instead of scattered throughout
+  + Combining all var statements with one initialized variable per line. The equals signs should be aligned. For variables that aren’t initialized, they should appear last.
+  ```js
+  function doSomethingWithItems(items) {
+      var value = 10,
+          result = value + 10,
+          i,
+          len;
+      for (i=0, len=items.length; i < len; i++) {
+          doSomething(items[i]);
+      }
+  }
+  ```
+- **Function Declarations**:  
+  + Function declarations should never appear inside of block statements
+  + The recommended style for function calls is to have no space between the function name and the opening parenthesis, which is done to differentiate it from a block statement.
+  + Immediate Function Invocation
+  ```js
+  // Good
+  var value = (function() {
+      // function body
+      return {
+          message: "Hi"
+      }
+  }());
+  ```
 
 
 
