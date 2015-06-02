@@ -125,6 +125,14 @@
       }
   }());
   ```
+- **Primitive Wrapper Types**:There are three primitive wrapper types: String, Boolean, and Number. Each of these types exists as a constructor in the global scope and each represents the object form of its respective primitive type. The main use of primitive wrapper types is to make primitive values act like objects.
+
+  ```js
+  // The author property has vanished after the second line. That’s because the temporaryString object representing the        // string was destroyed after line 2 executed, and a new String object was created for line 3.
+  var name = "Nicholas";
+  name.author = true;
+  console.log(name.author); // undefined
+  ```
 
 
 
