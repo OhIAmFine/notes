@@ -137,6 +137,20 @@
   name.author = true;
   console.log(name.author); // undefined
   ```
+- **Simple Client-Side Templates**: 
+  ```js
+  var templateText = "<li><a href='%s'>%s<b>%s</b></a></li>";
+
+  function sprintf(text) {
+      var i=1, args=arguments;
+      return text.replace(/%s/g, function() {
+          return (i < args.length) ? args[i++] : "";
+      });
+  }
+  // usage
+  var result = sprintf(templateText, "/item/4", "Fourth item", "$88");
+
+  ```
 
 
 
