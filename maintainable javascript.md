@@ -160,23 +160,108 @@
   ```js
   // Good
   var MyApplication = {
-    handleClick: function(event) {
-      // assume DOM Level 2 events support
-      event.preventDefault();
-      event.stopPropagation();
-      // pass to application logic
-      this.showPopup(event.clientX, event.clientY);
-    },
+      handleClick: function(event) {
+          // assume DOM Level 2 events support
+          event.preventDefault();
+          event.stopPropagation();
+          // pass to application logic
+          this.showPopup(event.clientX, event.clientY);
+      },
     showPopup: function(x, y) {
-      var popup = document.getElementById("popup");
-      popup.style.left = x + "px";
-      popup.style.top = y + "px";
-      popup.className = "reveal";
+        var popup = document.getElementById("popup");
+        popup.style.left = x + "px";
+        popup.style.top = y + "px";
+        popup.className = "reveal";
     }
   };
   addListener(element, "click", function(event) {
-    MyApplication.handleClick(event); // this is okay
+      MyApplication.handleClick(event); // this is okay
   });
+  ```
+- **Avoid Null Comparisons*:
+  + Decting Primitive values
+  + Decting Reference values
+  + Decting Properties
+  ```js
+  // If you are expecting a value to be a string, number, boolean, or undefined, the typeof operator is your best option.
+  // detect a string
+  if (typeof name === "string") {
+      anotherName = name.substring(3);
+  }
+  // detect a number
+  if (typeof count === "number") {
+      updateCount(count);
+  }
+  // detect a boolean
+  if (typeof found === "boolean" && found) {
+      message("Found!");
+  }
+  // detect undefined
+  if (typeof MyApp === "undefined") {
+      MyApp = {
+          // code
+      };
+  }
+  
+  //In JavaScript, any value that isn’t a primitive is definitely a reference.
+  //Another downside to using typeof for objects is that typeof returns “object” for null values as well
+  //The instanceof operator is the best way to detect values of a particular reference type
+  // detect a Date
+  if (value instanceof Date) {
+      console.log(value.getFullYear());
+  }
+  // detect a RegExp
+  if (value instanceof RegExp) {
+      if (value.test(anotherValue)) {
+          console.log("Matches");
+      }
+  }
+  // detect an Error
+  if (value instanceof Error) {
+      throw value;
+  }
+  
+  //The instanceof operator also works with custom types that you’ve defined for yourself.
+  function Person(name) {
+      this.name = name;
+  }
+  var me = new Person("Nicholas");
+  console.log(me instanceof Object); // true
+  console.log(me instanceof Person); // true
+  
+  // detect a Function
+  function myFunc() {}
+  // Bad
+  console.log(myFunc instanceof Function); // true
+  
+  function myFunc() {}
+  // Good
+  console.log(typeof myFunc === "function"); // true
+  
+  //detect a array
+  function isArray(value) {
+      return Object.prototype.toString.call(value) === "[object Array]";
+  }
+  
+  //detect a propertity
+  var object = {
+      count: 0,
+      related: null
+  };
+  // Good
+  if ("count" in object) {
+      // this executes
+  }
+  
+  // Good for all non-DOM objects
+  if (object.hasOwnProperty("related")) {
+      //this executes
+  }
+  // Good when you're not sure
+  if ("hasOwnProperty" in object && object.hasOwnProperty("related")) {
+      //this executes
+  }
+  
   ```
 
 
