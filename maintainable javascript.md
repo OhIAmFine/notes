@@ -151,6 +151,33 @@
   var result = sprintf(templateText, "/item/4", "Fourth item", "$88");
 
   ```
+- **Loose Coupling of UI layers**
+- **Avoid Gobals**
+- **Event Handling**:
+  + Separate Application Logic
+  + Don’t Pass the Event Object Around
+  + When handling events, it is best to let the event handler be the only function that touches the event object.
+  ```js
+  // Good
+  var MyApplication = {
+    handleClick: function(event) {
+      // assume DOM Level 2 events support
+      event.preventDefault();
+      event.stopPropagation();
+      // pass to application logic
+      this.showPopup(event.clientX, event.clientY);
+    },
+    showPopup: function(x, y) {
+      var popup = document.getElementById("popup");
+      popup.style.left = x + "px";
+      popup.style.top = y + "px";
+      popup.className = "reveal";
+    }
+  };
+  addListener(element, "click", function(event) {
+    MyApplication.handleClick(event); // this is okay
+  });
+  ```
 
 
 
