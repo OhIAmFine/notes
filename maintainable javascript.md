@@ -263,6 +263,28 @@
   }
   
   ```
+  
+**Browser Detection**: The value of 'navigator.userAgent' is not reliable, Looking to use a more sane approach to browser-based conditionals, developers turned to a technique called feature detection. 
+  + Test for the standard solution
+  + Test for browser-specific solutions
+  + Provide a logical fallback if no solution is availabal 
+  ```js
+  // Good
+  function getById (id) {
+      var element = null;
+      if (document.getElementById) { // DOM
+          element = document.getElementById(id);
+      } else if (document.all) { // IE
+          element = document.all[id];
+      } else if (document.layers) { // Netscape <= 4
+          element = document.layers[id];
+      }
+      return element;
+  }
+  ```
+  
+  
+
 
 
 
