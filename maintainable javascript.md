@@ -264,7 +264,7 @@
   
   ```
   
-**Browser Detection**: The value of 'navigator.userAgent' is not reliable, Looking to use a more sane approach to browser-based conditionals, developers turned to a technique called feature detection. 
+- **Browser Detection**: The value of 'navigator.userAgent' is not reliable, Looking to use a more sane approach to browser-based conditionals, developers turned to a technique called feature detection. 
   + Test for the standard solution
   + Test for browser-specific solutions
   + Provide a logical fallback if no solution is availabal 
