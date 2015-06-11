@@ -264,7 +264,7 @@
   
   ```
   
-- **Browser Detection**: The value of 'navigator.userAgent' is not reliable, Looking to use a more sane approach to browser-based conditionals, developers turned to a technique called feature detection. 
+- **Browser Detection**: The value of 'navigator.userAgent' is not reliable, Looking to use a more sane approach to browser-based conditionals, developers turned to a technique called feature detection. Feature inference and browser inference are very bad practices that should be avoided at all costs. Straight feature detection is a best practice, and in almost every case, is exactly what you’ll need.
   + Test for the standard solution
   + Test for browser-specific solutions
   + Provide a logical fallback if no solution is availabal 
