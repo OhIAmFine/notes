@@ -1,4 +1,4 @@
-1. a very simple piece of JavaScript can make the new HTML5 tag elements styleable in older versions of IE.
+1. a very simple piece of JavaScript can make the new HTML5 tag elements styleable in older versions of IE.HTML5 shiv script may need to be placed in the head of your document, because you want it to take effect before the browser starts rendering the page.
   ```html
   <!DOCTYPE html>
   <html>
