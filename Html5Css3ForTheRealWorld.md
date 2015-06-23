@@ -25,7 +25,7 @@
   
   ```
   
-2. mantainable html 
+2. maintainable html 
   + Use lowercase for all elements and attributes as you would in XHTML.
   + Despite some elements not requiring closing tags, we recommend that all elements containing content be closed (as in <p>Text</p>).
   + Although you can leave attribute values unquoted, it’s highly likely that you’ll have attributes that require quotes (for example, when declaring multiple classes separated by spaces, or when appending a query string value to a URL). As a result, we suggest that you always use quotes for the sake of consistency.
